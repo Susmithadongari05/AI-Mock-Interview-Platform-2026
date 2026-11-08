@@ -1,0 +1,30 @@
+{
+  "name": "ai-mock-interview-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test",
+    "check:env": "node scripts/check-env.js",
+    "db:info": "node scripts/db-info.js",
+    "db:scan": "node scripts/db-info.js --scan",
+    "user:reset-password": "node scripts/reset-password.js",
+    "smoke": "node scripts/smoke.js"
+  },
+  "dependencies": {
+    "@google/genai": "^2.31.0",
+    "assemblyai": "4.8.0",
+    "bcryptjs": "3.0.3",
+    "cors": "2.8.6",
+    "dotenv": "17.3.1",
+    "express": "5.2.1",
+    "jsonwebtoken": "9.0.3",
+    "mongoose": "9.2.4",
+    "multer": "1.4.5-lts.2",
+    "pdf-parse": "^2.4.5"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

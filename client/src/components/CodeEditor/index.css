@@ -1,0 +1,6 @@
+.code-editor-wrapper {
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #020a07;
+}

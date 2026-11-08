@@ -1,0 +1,445 @@
+/* ============================================
+   InterviewSetupPage - Emerald & Gold dark theme
+   (matches HomePage and Navbar)
+   ============================================ */
+
+.setup-page {
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  padding: 48px 24px 72px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  color: #e2e8f0;
+  background-color: #04120e;
+  background-image:
+    radial-gradient(900px 500px at 15% -10%, rgba(16, 185, 129, 0.22), transparent 60%),
+    radial-gradient(700px 420px at 95% 10%, rgba(212, 175, 55, 0.14), transparent 60%),
+    linear-gradient(180deg, #04120e 0%, #020a07 100%);
+  background-attachment: fixed;
+}
+
+/* Keep the area behind/around the page dark too (no white flashes on overscroll) */
+body:has(.setup-page),
+body:has(.setup-page) .protected-shell,
+body:has(.setup-page) .app-shell {
+  background-color: #04120e;
+}
+
+/* Centered glass panel that holds the whole wizard */
+.setup-container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 36px 36px 32px;
+  border-radius: 24px;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  background: linear-gradient(135deg, rgba(14, 40, 32, 0.85), rgba(6, 24, 19, 0.75));
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+}
+
+/* ---------- Step indicator ---------- */
+.setup-step-indicator {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.setup-step-badge {
+  padding: 8px 22px;
+  border-radius: 999px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #94a3b8;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.setup-step-active {
+  color: #f4d77a;
+  border-color: rgba(212, 175, 55, 0.6);
+  background-color: rgba(212, 175, 55, 0.14);
+}
+
+/* ---------- Sections ---------- */
+.setup-section {
+  margin-bottom: 28px;
+}
+
+.setup-section-heading {
+  text-align: center;
+  font-family: 'Bree Serif', serif;
+  font-size: 28px;
+  color: #f8fafc;
+  margin: 0 0 28px 0;
+}
+
+.setup-section-heading::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin: 12px auto 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #10b981, #d4af37);
+}
+
+/* ---------- Role cards ---------- */
+.setup-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+.setup-role-card,
+.setup-difficulty-card {
+  font: inherit;
+  color: inherit;
+  min-height: 170px;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 22px 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.setup-role-card:hover,
+.setup-difficulty-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(212, 175, 55, 0.5);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.setup-role-selected,
+.setup-difficulty-selected,
+.setup-role-selected:hover,
+.setup-difficulty-selected:hover {
+  border-color: #d4af37;
+  background-color: rgba(16, 185, 129, 0.16);
+  box-shadow: 0 0 0 1px #d4af37, 0 12px 32px rgba(16, 185, 129, 0.25);
+}
+
+.setup-role-icon {
+  font-size: 30px;
+  color: #34d399;
+}
+
+.setup-role-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.setup-role-desc {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ---------- Difficulty ---------- */
+.setup-difficulty-row {
+  display: flex;
+  gap: 16px;
+}
+
+.setup-difficulty-card {
+  flex: 1;
+}
+
+.setup-difficulty-stars {
+  display: flex;
+  gap: 4px;
+  font-size: 20px;
+}
+
+.setup-star-filled {
+  color: #e6c35c;
+}
+
+.setup-star-empty {
+  color: #475569;
+}
+
+.setup-difficulty-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.setup-difficulty-desc {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* ---------- Resume ---------- */
+.setup-resume-area {
+  display: flex;
+  justify-content: center;
+}
+
+.setup-upload-zone {
+  width: 100%;
+  max-width: 480px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px dashed rgba(212, 175, 55, 0.45);
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.03);
+  transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.setup-upload-zone:hover {
+  border-color: #d4af37;
+  background-color: rgba(212, 175, 55, 0.08);
+}
+
+.setup-upload-icon {
+  font-size: 40px;
+  color: #e6c35c;
+}
+
+.setup-upload-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.setup-resume-uploaded {
+  width: 100%;
+  max-width: 480px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.setup-resume-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.setup-resume-file-icon {
+  font-size: 24px;
+  color: #34d399;
+}
+
+.setup-resume-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f8fafc;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.setup-change-resume-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background-color: transparent;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #e6c35c;
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+}
+
+.setup-change-resume-btn:hover {
+  background-color: rgba(212, 175, 55, 0.15);
+}
+
+/* ---------- Buttons ---------- */
+.setup-nav-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.setup-back-btn {
+  padding: 12px 28px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+}
+
+.setup-back-btn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.setup-next-btn,
+.setup-start-btn {
+  padding: 12px 32px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  background: linear-gradient(135deg, #34d399, #10b981 60%, #059669);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.setup-start-btn {
+  min-width: 260px;
+  padding: 14px 32px;
+}
+
+.setup-next-btn:hover,
+.setup-start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.55);
+}
+
+.setup-start-btn-disabled,
+.setup-start-btn-disabled:hover {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ---------- Preparing screen ---------- */
+.setup-preparing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  gap: 16px;
+}
+
+.setup-preparing-spinner {
+  width: 48px;
+  height: 48px;
+  color: #e6c35c;
+}
+
+.setup-preparing-heading {
+  font-family: 'Bree Serif', serif;
+  font-size: 26px;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.setup-preparing-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #94a3b8;
+  margin: 0;
+  max-width: 480px;
+}
+
+.setup-preparing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.setup-prep-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.setup-prep-step-icon-active {
+  font-size: 20px;
+  color: #34d399;
+}
+
+.setup-prep-step-icon-pending {
+  font-size: 20px;
+  color: #64748b;
+}
+
+.setup-prep-step-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+.setup-preparing-hint {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #64748b;
+  margin: 8px 0 0 0;
+}
+
+/* ---------- Error banner ---------- */
+.setup-error {
+  margin-top: 24px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(248, 113, 113, 0.5);
+  background: rgba(239, 68, 68, 0.12);
+  color: #fca5a5;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .setup-page {
+    padding: 20px 12px 48px;
+  }
+
+  .setup-container {
+    padding: 24px 16px;
+  }
+
+  .setup-difficulty-row {
+    flex-direction: column;
+  }
+
+  .setup-step-indicator {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,161 @@
+/* ============================================
+   Navbar - Emerald & Gold premium theme
+   (matches HomePage/index.css)
+   ============================================ */
+
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 28px;
+  background: linear-gradient(90deg, #04120ef2, #0b1f18f2);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.28);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-icon {
+  color: #e6c35c;
+  font-size: 26px;
+}
+
+.brand-text {
+  font-family: 'Bree Serif', serif;
+  font-size: 19px;
+  letter-spacing: 0.3px;
+  background: linear-gradient(90deg, #ffffff, #f4d77a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #cbd5e1;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.nav-link-icon {
+  font-size: 18px;
+}
+
+.nav-link-active,
+.nav-link-active:hover {
+  color: #f4d77a;
+  background: rgba(212, 175, 55, 0.14);
+  border-color: rgba(212, 175, 55, 0.45);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-user-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.user-icon {
+  color: #e6c35c;
+  font-size: 16px;
+}
+
+.user-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #f8fafc;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(248, 113, 113, 0.4);
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fca5a5;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.logout-btn:hover {
+  color: #ffffff;
+  background: rgba(239, 68, 68, 0.75);
+}
+
+.logout-icon {
+  font-size: 16px;
+}
+
+.navbar-container a:focus-visible,
+.navbar-container button:focus-visible {
+  outline: 2px solid #e6c35c;
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .navbar-container {
+    padding: 0 12px;
+  }
+
+  .navbar-left {
+    gap: 12px;
+  }
+
+  .brand-text,
+  .user-name {
+    display: none;
+  }
+
+  .nav-link {
+    padding: 8px 10px;
+  }
+}
